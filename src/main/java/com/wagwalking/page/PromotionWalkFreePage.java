@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class PromotionWalkFreePage extends BasePage {
 
     public PromotionWalkFreePage(WebDriver driver) {
@@ -27,19 +29,26 @@ public class PromotionWalkFreePage extends BasePage {
     private WebElement cellPhoneField;
 
     @FindBy(css = ".sc-bdVaJa.sc-iwsKbI.kOShw")
-    private WebElement requiredEmailField;
+    private List<WebElement> requiredFields;
 
-    @FindBy(css = ".sc-bdVaJa.sc-iwsKbI.kOShw")
-    private WebElement requiredPasswordField;
+    /*
+    [0] - email required
+    [1] - firstName required
+    [2] - lastName required
+    [3] - cellphone reqiured
 
-    @FindBy(css = ".sc-bdVaJa.sc-iwsKbI.kOShw")
-    private WebElement requiredFirstNameField;
+     */
 
-    @FindBy(css = ".sc-bdVaJa.sc-iwsKbI.kOShw")
-    private WebElement requiredLastNameField;
+    @FindBy(css =".sc-gzVnrw.fzplxK")
+    private List<WebElement> verifyPassword;
 
-    @FindBy(css = ".sc-bdVaJa.sc-iwsKbI.kOShw")
-    private WebElement requiredCellPhoneField;
+    /*
+
+    [0] - 8 Characters
+    [1] - 1 Letter
+    [2] - 1 Number
+
+     */
 
 
     public void inputEmail(String email) {
@@ -90,24 +99,29 @@ public class PromotionWalkFreePage extends BasePage {
 
 
     public String getRequiredEmailNote() {
-        return requiredEmailField.getText();
-    }
-
-    public String getRequiredPasswordNote() {
-        return requiredPasswordField.getText();
+        return requiredFields.get(0).getText();
     }
 
     public String getRequiredFirstNameNote() {
-        return requiredFirstNameField.getText();
+        return requiredFields.get(1).getText();
     }
 
     public String getRequiredLastNameNote() {
-        return requiredLastNameField.getText();
+        return requiredFields.get(2).getText();
     }
 
     public String getRequiredCellPhoneNote() {
-        return requiredCellPhoneField.getText();
+        return requiredFields.get(3).getText();
 
+    }
+    public String getPasswordField8Characters() {
+        return verifyPassword.get(0).getText();
+    }
+    public String getPasswordField1Letter() {
+        return verifyPassword.get(1).getText();
+    }
+    public String getPasswordField1Number() {
+        return verifyPassword.get(2).getText();
     }
 }
 

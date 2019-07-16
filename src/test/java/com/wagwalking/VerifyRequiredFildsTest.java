@@ -22,25 +22,21 @@ public class VerifyRequiredFildsTest extends BaseTest {
 
         promotionPage.clickEmailField();
 
-        promotionPage.clickPasswordField();
-
         promotionPage.clickfirstName();
 
         promotionPage.clicklastName();
 
+        promotionPage.clickcellPhone();
+
         promotionPage.clickPasswordField();
+
+
 
         String emailNote = promotionPage.getRequiredEmailNote();
 
         System.out.println(emailNote);
 
         Assert.assertEquals("required", emailNote);
-
-        String passwordNote = promotionPage.getRequiredPasswordNote();
-
-        System.out.println(passwordNote);
-
-        Assert.assertEquals("required",passwordNote);
 
         String firstNameNote = promotionPage.getRequiredFirstNameNote();
 
@@ -59,6 +55,24 @@ public class VerifyRequiredFildsTest extends BaseTest {
         System.out.println(cellPhone);
 
         Assert.assertEquals("required",cellPhone);
+
+        String characters = promotionPage.getPasswordField8Characters();
+
+        System.out.println(characters);
+
+        Assert.assertEquals("(8 Characters,",characters);
+
+        String letters = promotionPage.getPasswordField1Letter();
+
+        System.out.println(letters);
+
+        Assert.assertEquals("1 Letter,", letters);
+
+        String numbers = promotionPage.getPasswordField1Number();
+
+        System.out.println(numbers);
+
+        Assert.assertEquals("1 Number)",numbers);
 
 
 
