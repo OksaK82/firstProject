@@ -33,9 +33,9 @@ public  abstract class BaseTest {
 
         Assert.assertEquals(expectedTitle,actualTitle);
 
-        user = new User("kim281082@gmail.com","12344fdr78","Oksana","Kim","2136789876");
+        user = new User("alex@gmail.com","12344fdr78","Oksana","Kim","2136789876");
 
-        user2 = new User2("83hjakak@mail.ru","97464tgbsj","Olga","Ivanova","2134567876");
+        user2 = new User2("83hjakak@mail.ru","97464tgbsj","Olga","Ivanova","2134567876","123 Valencia","123","Santa Clara","CA","91381");
 
         user3 = new User3("iyre@ncd.com","456yredcvhb8","Ivan","Petrov","5432246899");
 
